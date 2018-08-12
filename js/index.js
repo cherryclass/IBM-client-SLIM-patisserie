@@ -1,4 +1,4 @@
-var url = "http://localhost/api-gateau";
+var myUrl = "http://localhost/api-gateau";
 
 $( document ).ready(function() {
 $('#btn-insert-gateau').click(function(){ 
@@ -7,7 +7,7 @@ var nom=$('#nom').val();
 $.ajax({ 
       type: "POST",
       contentType: 'application/json; charset=utf-8',
-      url: url+"/gateau?id="+id+"&nom="+nom,
+      url: myUrl+"/gateau?id="+id+"&nom="+nom,
      success: function(data){
           //gateau modifié
          alert("gateau enregistré");
@@ -19,7 +19,7 @@ $.ajax({
       $.ajax({ 
       
       type: "GET",
-      url: url+"/gateau/"+idx,
+      url: myUrl+"/gateau/"+idx,
       success: function(data){ 
 
        	$("#result").html(data);
@@ -32,7 +32,7 @@ $.ajax({
 
 $('#btn-get-gateau').click(function(){ 
     var idx=$('#idx').val();
-    $.getJSON( url+"/gateau/"+idx, function( data ) {
+    $.getJSON( myUrl+"/gateau/"+idx, function( data ) {
 		$('#result').html(data[0].nom);
 		
     });
