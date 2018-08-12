@@ -40,7 +40,7 @@ $('#btn-get-gateau').click(function(){
 
 $('#btn-get-gateaux').click(function(){ 
       $('#table-gateau').bootstrapTable({
-            url: 'http://localhost/api-gateau/gateaux',
+            url: myUrl+"/gateaux",
             columns: [{
                 field: 'id',
                 title: 'Item ID'
@@ -52,7 +52,7 @@ $('#btn-get-gateaux').click(function(){
 
       /*$.ajax({ 
       type: "GET",
-      url: "http://localhost/api-gateau/gateaux",
+      url: myUrl+"/gateaux",
       success: function(data){  
         $("#result2").html(data);
         
