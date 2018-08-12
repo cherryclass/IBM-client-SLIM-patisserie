@@ -6,6 +6,7 @@ var id=$('#id').val();
 var nom=$('#nom').val();
 $.ajax({ 
       type: "POST",
+      crossDomain: true,
       contentType: 'application/json; charset=utf-8',
       url: myUrl+"gateau?id="+id+"&nom="+nom,
      success: function(data){
@@ -14,10 +15,10 @@ $.ajax({
       }
  });
 });
-/*$('#btn-get-gateau').click(function(){ 
+$('#btn-get-gateau').click(function(){ 
     var idx=$('#idx').val();
       $.ajax({ 
-      
+      crossDomain: true,
       type: "GET",
       url: myUrl+"gateau/"+idx,
       success: function(data){ 
@@ -26,17 +27,8 @@ $.ajax({
       }
     });
   });
-*/
-
-
-
-$('#btn-get-gateau').click(function(){ 
-    var idx=$('#idx').val();
-    $.getJSON( myUrl+"gateau/"+idx, function( data ) {
-		$('#result').html(data[0].nom);
-		
-    });
-  });
+	
+	
 
 $('#btn-get-gateaux').click(function(){ 
       $('#table-gateau').bootstrapTable({
