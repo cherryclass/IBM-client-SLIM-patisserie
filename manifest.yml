@@ -3,5 +3,6 @@ applications:
   memory: 128M
   instances: 1
   buildpack: php_buildpack
-  route: cli-patisserie-${random-word}
+  routes: 
+    - route: client-patisserie-${random-word}.eu-de.mybluemix.net
   
